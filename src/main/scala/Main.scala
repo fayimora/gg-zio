@@ -10,7 +10,7 @@ object Main extends ZIOAppDefault:
   private implicit val configDescriptor: _root_.zio.config.ConfigDescriptor[CrawlerConfig] = descriptor[CrawlerConfig]
 
   override def run =
-    val program = for
+    for
       conf <- read(
         configDescriptor.from(ConfigSource.fromTypesafeConfig(
           ZIO.attempt(ConfigFactory.defaultApplication())
@@ -18,7 +18,7 @@ object Main extends ZIOAppDefault:
       )
       _ <- printLine(s"Conf is $conf")
     yield ()
-    program.exitCode
+    
 //    for
 //      config <- read(CrawlerConfig.descriptor.from(CrawlerConfig.source))
 //      _ <- printLine(config)
