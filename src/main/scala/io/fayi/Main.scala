@@ -2,7 +2,7 @@ package io.fayi
 
 import com.typesafe.config.ConfigFactory
 import zio.Console.printLine
-import zio.config._, typesafe._
+import zio.config.*, typesafe.*
 import zio.config.magnolia.descriptor
 import zio.{ZIO, ZIOAppDefault}
 
